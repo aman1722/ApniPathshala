@@ -1,5 +1,5 @@
 """
-ASGI config for apnipathshala project.
+ASGI config for edusphere project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'apnipathshala.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'edusphere.settings')
 
 application = get_asgi_application()
