@@ -1,13 +1,3 @@
-<h2>Assignment List</h2>
-<div *ngFor="let assignment of assignments">
-  <p>Name: {{ assignment.title }}</p>
-  <p>Description: {{ assignment.description }}</p>
-  <p>Due Date: {{ assignment.due_date }}</p>
-  <button (click)="updateAssignment(assignment.id, { description: 'completed' })">
-    Update
-  </button>
-  <button (click)="deleteAssignment(assignment.id)">Delete</button>
-</div>
 
 <!-- <form (ngSubmit)="createAssignment()">
     <input type="text" placeholder="Title" [(ngModel)]="newAssignment.title" name="title" />
