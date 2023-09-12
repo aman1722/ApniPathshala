@@ -54,7 +54,7 @@
     height: 40px;
     width: 151px;
     border: none;
-    background: #ffb039;
+    background: #FFA726;
     border-radius: 20px;
     cursor: pointer;
   }
@@ -99,7 +99,7 @@
     background-color: rgb(246, 241, 241);
     border: none;
    color: white;
-   
+   margin-right: 20px;
     font-weight: 400;
     
   }
@@ -112,23 +112,3 @@
 
 /* styles.css (or your component-specific CSS file) */
 
-@media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .brand {
-      margin-bottom: 10px;
-  }
-
-  .nav-options,
-  .auth-buttons {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .auth-buttons {
-      margin-top: 10px;
-  }
-}

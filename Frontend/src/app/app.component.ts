@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { GlobalService } from './global.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,11 @@ export class AppComponent {
   title = 'Frontend';
   isStudent: boolean = false;
   isInstructor: boolean = false;
+  instructorName : string  = this.getinstructorname();
+  StudentName : string  =this.getstudentname();
+  nameforbot : string = "User"
 
-  constructor(private router: Router,private route: ActivatedRoute) {
+  constructor(private router: Router,private route: ActivatedRoute,private globalserveice : GlobalService) {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
        this.updateNavbar(event.url)
@@ -20,9 +24,27 @@ export class AppComponent {
 
       
   }
+
+  getinstructorname(){
+    return this.globalserveice.getInstructorLoginDetails()?.name || 'User';
+  }
+
+  getstudentname(){
+    return this.globalserveice.getStudentLoginDetails()?.name || 'User';
+  }
+
+
   ngOnInit(): void {
    
+    if(this.isStudent){
+      this.nameforbot = this.StudentName
+    }else if(this.isInstructor){
+      this.nameforbot = this.instructorName
+    }else{
+      this.nameforbot = 'User'
+    }
    
+
     
   }
 
